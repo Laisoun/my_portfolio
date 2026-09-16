@@ -1,64 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;800&display=swap');
+
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #0f172a;
-  color: #fff;
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.navbar {
-  background: rgba(0,0,0,0.8);
+/* Profile Image */
+.profile-img {
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+  border: 4px solid #0d6efd;
+}
+
+/* Glassmorphism Styles */
+.glass-nav {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.glass-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  border-color: rgba(13, 110, 253, 0.4);
+}
+
+/* Hero & Terminal */
 .hero {
   min-height: 100vh;
-  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  padding-top: 100px;
 }
 
-.hero h1 span {
-  color: #facc15;
+.terminal-card {
+  background: #0d1117;
+  border-radius: 12px;
+  border: 1px solid #30363d;
+  font-family: 'Fira Code', monospace;
 }
 
-.profile-img {
-  width: 150px;
+.terminal-header {
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+  border-radius: 12px 12px 0 0;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  border: 4px solid #fff;
+  display: inline-block;
 }
 
+.token-keyword { color: #ff7b72; }
+.token-variable { color: #79c0ff; }
+.token-property { color: #d2a8ff; }
+.token-string { color: #a5d6ff; }
+
+/* Typing Cursor */
+.cursor {
+  animation: blink 0.7s infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Section Spacing */
 .section {
-  padding: 80px 0;
+  padding: 100px 0;
 }
 
-.skill {
-  background: #1e293b;
-  padding: 15px;
-  margin: 10px 0;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-
-.skill:hover {
-  transform: translateY(-5px);
-  background: #2563eb;
-}
-
+/* Projects */
 .project-card {
-  background: #1e293b;
-  border-radius: 15px;
   overflow: hidden;
-  transition: 0.3s;
-  margin-bottom: 30px;
 }
 
-.project-card img {
+.project-img {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
-.project-card:hover {
-  transform: translateY(-10px);
-}
-
-footer {
-  background: #020617;
+.project-card:hover .project-img {
+  transform: scale(1.05);
 }
